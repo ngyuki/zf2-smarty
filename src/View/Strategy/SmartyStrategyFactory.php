@@ -30,11 +30,9 @@ class SmartyStrategyFactory implements FactoryInterface
     private function createConfig(ServiceLocatorInterface $serviceLocator)
     {
         $appConfig = $serviceLocator->get('Config');
-
         $smartyConfig = new SmartyConfig();
 
-        if (isset($appConfig['smarty']) && is_array($appConfig['smarty']))
-        {
+        if (isset($appConfig['smarty']) && is_array($appConfig['smarty'])) {
             $hyd = new Reflection();
             $hyd->hydrate($appConfig['smarty'], $smartyConfig);
         }
@@ -73,10 +71,8 @@ class SmartyStrategyFactory implements FactoryInterface
 
         $instance = new TemplateMapResolver();
 
-        foreach ($orig->getMap() as $name => $file)
-        {
-            if (substr($file, -4) === '.tpl')
-            {
+        foreach ($orig->getMap() as $name => $file) {
+            if (substr($file, -4) === '.tpl') {
                 $instance->add($name, $file);
             }
         }
