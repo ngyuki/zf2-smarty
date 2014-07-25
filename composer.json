@@ -1,0 +1,27 @@
+{
+    "name": "ngyuki/zf2-smarty",
+    "description": "Smarty module for Zend Framework 2",
+    "type": "library",
+    "keywords": [
+        "zf2",
+        "module",
+        "smarty"
+    ],
+    "homepage": "https://github.com/ngyuki/zf2-smarty",
+    "license": "MIT",
+    "authors": [
+        { "name": "ngyuki", "email": "ngyuki.ts@gmail.com" }
+    ],
+    "autoload": {
+        "psr-4": {
+            "ZendSmarty\\": "src/"
+        }
+    },
+    "require": {
+        "php": ">=5.3.3",
+        "smarty/smarty": "3.*"
+    },
+    "require-dev": {
+        "zendframework/zendframework": "2.*"
+    }
+}
