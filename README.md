@@ -36,12 +36,12 @@ return array(
 ## Using ZF2 View Helpers
 
 ```
-{* Simple view helper echo *}
+{* simple with echo (not support method chain) *}
 {url bar [id => 12345]}
 
-{* Using a view helper without an echo *}
+{* simple without echo (not support method chain) *}
 {do headTitle "Index Page"}
 
-{* Echo with additional methods *}
+{* method chain *}
 {$this->headTitle("ZF2 Smarty")->setSeparator(' - ') nofilter}
 ```
