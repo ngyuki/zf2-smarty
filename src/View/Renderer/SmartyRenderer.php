@@ -7,9 +7,9 @@ use Zend\View\Model\ModelInterface;
 use Zend\View\Renderer\RendererInterface;
 use Zend\View\Resolver\ResolverInterface;
 
+use ZendSmarty\ModuleOptions;
 use ZendSmarty\View\Smarty\CompilerPlugin;
 use ZendSmarty\View\Smarty\HelperProxy;
-use ZendSmarty\View\Strategy\SmartyConfig;
 
 class SmartyRenderer implements RendererInterface
 {
@@ -19,7 +19,7 @@ class SmartyRenderer implements RendererInterface
     private $smarty;
 
     /**
-     * @var SmartyConfig
+     * @var ModuleOptions
      */
     private $config;
 
@@ -34,10 +34,10 @@ class SmartyRenderer implements RendererInterface
     private $helpers;
 
     /**
-     * @param SmartyConfig $config
+     * @param ModuleOptions $config
      * @param HelperPluginManager $helpers
      */
-    public function __construct(SmartyConfig $config, HelperPluginManager $helpers)
+    public function __construct(ModuleOptions $config, HelperPluginManager $helpers)
     {
         $this->smarty = new \Smarty();
         $this->config = $config;

@@ -1,5 +1,5 @@
 <?php
-namespace ZendSmarty\View\Strategy;
+namespace ZendSmarty;
 
 /**
  * @property-read array   $options
@@ -7,7 +7,7 @@ namespace ZendSmarty\View\Strategy;
  * @property-read boolean $enable_helper_object
  * @property-read string  $assigning_helper_name
  */
-class SmartyConfig
+class ModuleOptions
 {
     /**
      * @var array
