@@ -1,12 +1,12 @@
 <?php
 namespace ZendSmarty\Service;
 
-use Zend\Mvc\Service\ViewTemplateMapResolverFactory;
+use Zend\ServiceManager\FactoryInterface;
 use Zend\ServiceManager\ServiceLocatorInterface;
 use Zend\View\Resolver\TemplateMapResolver;
 use ZendSmarty\ModuleOptions;
 
-class SmartyTemplateMapResolverFactory extends ViewTemplateMapResolverFactory
+class SmartyTemplateMapResolverFactory implements FactoryInterface
 {
     public function createService(ServiceLocatorInterface $serviceLocator)
     {

@@ -1,19 +1,25 @@
 <?php
 namespace ZendSmarty\Service;
 
-use Zend\Mvc\Service\ViewTemplatePathStackFactory;
+use Zend\ServiceManager\FactoryInterface;
 use Zend\ServiceManager\ServiceLocatorInterface;
+use Zend\View\Resolver\TemplatePathStack;
 use ZendSmarty\ModuleOptions;
 
-class SmartyTemplatePathStackFactory extends ViewTemplatePathStackFactory
+class SmartyTemplatePathStackFactory implements FactoryInterface
 {
     public function createService(ServiceLocatorInterface $serviceLocator)
     {
         /* @var $config ModuleOptions */
         $config = $serviceLocator->get('ZendSmarty\ModuleOptions');
 
-        $instance = parent::createService($serviceLocator);
+        /* @var $orig TemplatePathStack */
+        $orig = $serviceLocator->get('ViewTemplatePathStack');
+
+        $instance = new TemplatePathStack();
+        $instance->addPaths($orig->getPaths()->toArray());
         $instance->setDefaultSuffix($config->suffix);
+
         return $instance;
     }
 }
