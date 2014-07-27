@@ -1,5 +1,5 @@
 <?php
-namespace ZendSmarty\View\Service;
+namespace ZendSmarty\Service;
 
 use Zend\Mvc\Service\ViewTemplateMapResolverFactory;
 use Zend\ServiceManager\ServiceLocatorInterface;

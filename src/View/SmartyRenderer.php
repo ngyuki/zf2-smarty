@@ -1,5 +1,5 @@
 <?php
-namespace ZendSmarty\View\Renderer;
+namespace ZendSmarty\View;
 
 use Zend\View\Exception;
 use Zend\View\HelperPluginManager;
@@ -8,8 +8,8 @@ use Zend\View\Renderer\RendererInterface;
 use Zend\View\Resolver\ResolverInterface;
 
 use ZendSmarty\ModuleOptions;
-use ZendSmarty\View\Smarty\CompilerPlugin;
-use ZendSmarty\View\Smarty\HelperProxy;
+use ZendSmarty\Smarty\CompilerPlugin;
+use ZendSmarty\Smarty\HelperProxy;
 
 class SmartyRenderer implements RendererInterface
 {

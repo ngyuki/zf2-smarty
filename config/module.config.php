@@ -4,16 +4,16 @@ return array(
         'factories' => array(
             'ZendSmarty\ModuleOptions' => 'ZendSmarty\ModuleOptionsFactory',
 
-            'ZendSmarty\View\Strategy\SmartyStrategy' => 'ZendSmarty\View\Strategy\SmartyStrategyFactory',
-            'ZendSmarty\View\Renderer\SmartyRenderer' => 'ZendSmarty\View\Renderer\SmartyRendererFactory',
+            'ZendSmarty\View\SmartyStrategy' => 'ZendSmarty\View\SmartyStrategyFactory',
+            'ZendSmarty\View\SmartyRenderer' => 'ZendSmarty\View\SmartyRendererFactory',
 
-            'SmartyResolver' => 'ZendSmarty\View\Service\SmartyResolverFactory',
-            'SmartyTemplatePathStack' => 'ZendSmarty\View\Service\SmartyTemplatePathStackFactory',
-            'SmartyTemplateMapResolver' => 'ZendSmarty\View\Service\SmartyTemplateMapResolverFactory',
+            'SmartyResolver'            => 'ZendSmarty\Service\SmartyResolverFactory',
+            'SmartyTemplatePathStack'   => 'ZendSmarty\Service\SmartyTemplatePathStackFactory',
+            'SmartyTemplateMapResolver' => 'ZendSmarty\Service\SmartyTemplateMapResolverFactory',
         ),
         'aliases' => array(
-            'SmartyStrategy' => 'ZendSmarty\View\Strategy\SmartyStrategy',
-            'SmartyRenderer' => 'ZendSmarty\View\Renderer\SmartyRenderer',
+            'SmartyStrategy' => 'ZendSmarty\View\SmartyStrategy',
+            'SmartyRenderer' => 'ZendSmarty\View\SmartyRenderer',
         ),
     ),
     'view_manager' => array(

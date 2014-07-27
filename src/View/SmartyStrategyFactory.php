@@ -1,5 +1,5 @@
 <?php
-namespace ZendSmarty\View\Strategy;
+namespace ZendSmarty\View;
 
 use Zend\ServiceManager\FactoryInterface;
 use Zend\ServiceManager\ServiceLocatorInterface;

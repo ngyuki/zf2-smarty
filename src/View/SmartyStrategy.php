@@ -1,11 +1,9 @@
 <?php
-namespace ZendSmarty\View\Strategy;
+namespace ZendSmarty\View;
 
 use Zend\EventManager\AbstractListenerAggregate;
 use Zend\EventManager\EventManagerInterface;
 use Zend\View\ViewEvent;
-
-use ZendSmarty\View\Renderer\SmartyRenderer;
 
 class SmartyStrategy extends AbstractListenerAggregate
 {

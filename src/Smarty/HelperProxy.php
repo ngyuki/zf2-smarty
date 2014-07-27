@@ -1,5 +1,5 @@
 <?php
-namespace ZendSmarty\View\Smarty;
+namespace ZendSmarty\Smarty;
 
 use Zend\View\HelperPluginManager;
 
