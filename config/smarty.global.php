@@ -13,6 +13,9 @@ return array(
             'compile_dir' => __DIR__ . '/../../data/templates_c',
         ),
 
+        // Template file suffix [default: 'tpl']
+        'suffix' => 'tpl',
+
         // Enable ViewHelper functions [default: true]
         'enable_helper_functions' => true,
 

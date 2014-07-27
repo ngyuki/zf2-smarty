@@ -3,6 +3,7 @@ namespace ZendSmarty;
 
 /**
  * @property-read array   $options
+ * @property-read string  $suffix
  * @property-read boolean $enable_helper_functions
  * @property-read boolean $enable_helper_object
  * @property-read string  $assigning_helper_name
@@ -13,6 +14,11 @@ class ModuleOptions
      * @var array
      */
     protected $options = array();
+
+    /**
+     * @var boolean
+     */
+    protected $suffix = 'tpl';
 
     /**
      * @var boolean
