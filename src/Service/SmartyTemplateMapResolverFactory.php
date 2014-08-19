@@ -17,12 +17,12 @@ class SmartyTemplateMapResolverFactory implements FactoryInterface
         $orig = $serviceLocator->get('ViewTemplateMapResolver');
 
         $suffix = '.' . $config->suffix;
-        $len = strlen($suffix);
+        $nlen = -strlen($suffix);
 
         $instance = new TemplateMapResolver();
 
         foreach ($orig->getMap() as $name => $file) {
-            if (substr($file, $len) === $suffix) {
+            if (substr($file, $nlen) === $suffix) {
                 $instance->add($name, $file);
             }
         }

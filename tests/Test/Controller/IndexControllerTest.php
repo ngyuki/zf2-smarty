@@ -23,5 +23,6 @@ class IndexControllerTest extends \Zend\Test\PHPUnit\Controller\AbstractHttpCont
         $this->assertControllerName('Application\Controller\Index');
         $this->assertControllerClass('IndexController');
         $this->assertActionName('index');
+        $this->assertQueryContentRegex('title', '/ZF2 Smarty/');
     }
 }
