@@ -10,8 +10,8 @@ class SmartyResolverFactory implements FactoryInterface
     public function createService(ServiceLocatorInterface $serviceLocator)
     {
         $resolver = new AggregateResolver();
-        $resolver->attach($serviceLocator->get('SmartyTemplatePathStack'));
         $resolver->attach($serviceLocator->get('SmartyTemplateMapResolver'));
+        $resolver->attach($serviceLocator->get('SmartyTemplatePathStack'));
         return $resolver;
     }
 }
