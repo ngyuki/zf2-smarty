@@ -1,7 +1,7 @@
 <?php
-namespace SampleTest\Controller;
+namespace Test\Controller;
 
-class SampleTest extends \Zend\Test\PHPUnit\Controller\AbstractHttpControllerTestCase
+class IndexControllerTest extends \Zend\Test\PHPUnit\Controller\AbstractHttpControllerTestCase
 {
     protected $traceError = true;
 
