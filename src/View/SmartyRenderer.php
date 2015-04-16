@@ -109,6 +109,10 @@ class SmartyRenderer implements RendererInterface
         return $content;
     }
 
+    /**
+     * @param $nameOrModel
+     * @return bool
+     */
     public function canRender($nameOrModel)
     {
         if ($nameOrModel instanceof ModelInterface) {
