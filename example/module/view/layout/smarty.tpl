@@ -19,6 +19,7 @@
                 <li><a href={url home}>Home</a></li>
                 <li><a href={url foo}>Foo</a></li>
                 <li><a href={url bar [id => 12345]}>Bar</a></li>
+                <li><a href={url json}>Json</a></li>
             </ul>
         </div>
     </nav>

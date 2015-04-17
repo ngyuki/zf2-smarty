@@ -34,5 +34,17 @@ return array(
                 ),
             ),
         ),
+
+        'json' => array(
+            'type' => 'literal',
+            'options' => array(
+                'route'    => '/json',
+                'defaults' => array(
+                    'controller' => 'Application\Controller\Index',
+                    'action'     => 'index',
+                    'json'       => true,
+                ),
+            ),
+        ),
     ),
 );
