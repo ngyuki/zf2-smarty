@@ -12,27 +12,5 @@ return array(
                 ),
             ),
         ),
-
-        'foo' => array(
-            'type' => 'literal',
-            'options' => array(
-                'route'    => '/foo',
-                'defaults' => array(
-                    'controller' => 'Application\Controller\Index',
-                    'action'     => 'index',
-                ),
-            ),
-        ),
-
-        'bar' => array(
-            'type' => 'segment',
-            'options' => array(
-                'route'    => '/bar/:id',
-                'defaults' => array(
-                    'controller' => 'Application\Controller\Index',
-                    'action'     => 'index',
-                ),
-            ),
-        ),
     ),
 );

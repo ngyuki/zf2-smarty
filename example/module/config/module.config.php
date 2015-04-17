@@ -16,9 +16,6 @@ return array(
         'doctype'                   => 'HTML5',
         'not_found_template'        => 'error/404',
         'exception_template'        => 'error/index',
-        'template_map' => array(
-            'layout/layout'         => __DIR__ . '/../view/layout/smarty.tpl',
-        ),
         'template_path_stack' => array(
             __DIR__ . '/../view',
         ),
