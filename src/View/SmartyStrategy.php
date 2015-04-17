@@ -3,6 +3,7 @@ namespace ZendSmarty\View;
 
 use Zend\EventManager\AbstractListenerAggregate;
 use Zend\EventManager\EventManagerInterface;
+use Zend\View\Model;
 use Zend\View\ViewEvent;
 
 class SmartyStrategy extends AbstractListenerAggregate
@@ -25,8 +26,8 @@ class SmartyStrategy extends AbstractListenerAggregate
      */
     public function attach(EventManagerInterface $events, $priority = 100)
     {
-        $this->listeners[] = $events->attach(ViewEvent::EVENT_RENDERER, array($this, 'selectRenderer'), $priority);
-        $this->listeners[] = $events->attach(ViewEvent::EVENT_RESPONSE, array($this, 'injectResponse'), $priority);
+        $this->listeners[] = $events->attach(ViewEvent::EVENT_RENDERER, [$this, 'selectRenderer'], $priority);
+        $this->listeners[] = $events->attach(ViewEvent::EVENT_RESPONSE, [$this, 'injectResponse'], $priority);
     }
 
     /**
@@ -35,6 +36,20 @@ class SmartyStrategy extends AbstractListenerAggregate
      */
     public function selectRenderer(ViewEvent $ev)
     {
+        $model = $ev->getModel();
+
+        // this case needs special checking, as JsonModel is a subclass of
+        // ViewModel
+        if ($model instanceof Model\JsonModel) {
+            // JsonModel; do nothing
+            return;
+        }
+
+        if (!$model instanceof Model\ViewModel) {
+            // no ViewModel; do nothing
+            return;
+        }
+
         if ($this->renderer->canRender($ev->getModel())) {
             return $this->renderer;
         } else {
@@ -49,7 +64,7 @@ class SmartyStrategy extends AbstractListenerAggregate
     public function injectResponse(ViewEvent $ev)
     {
         if ($ev->getRenderer() === $this->renderer) {
-            $result = $ev->getResult();
+            $result   = $ev->getResult();
             $response = $ev->getResponse();
             $response->setContent($result);
         }
