@@ -8,15 +8,16 @@ class IndexController extends AbstractActionController
 {
     public function indexAction()
     {
-        if ($this->params("json", false)) {
-            return new JsonModel(array(
-                'name' => 'this is json model',
-            ));
-        } else {
-            return array(
-                'value' => '<script>alert("!!!")</script>',
-                'html' => '<strong>The strong string</strong>',
-            );
-        }
+        return array(
+            'value' => '<script>alert("!!!")</script>',
+            'html' => '<strong>The strong string</strong>',
+        );
+    }
+
+    public function jsonAction()
+    {
+        return new JsonModel(array(
+            'name' => 'this is json',
+        ));
     }
 }

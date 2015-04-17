@@ -41,8 +41,7 @@ return array(
                 'route'    => '/json',
                 'defaults' => array(
                     'controller' => 'Application\Controller\Index',
-                    'action'     => 'index',
-                    'json'       => true,
+                    'action'     => 'json',
                 ),
             ),
         ),
